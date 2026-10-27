@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.util.HashSet;
+import java.util.Set;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -19,4 +21,10 @@ public class Alimento {
     @Size(max = 50, message = "El nombre no puede pasar de 50 caracteres")
     @Column(nullable = false, unique = true, length = 50)
     private String nombre;
+
+    @ManyToMany
+    @JoinTable(name = "alimento_nutriente",
+        joinColumns = @JoinColumn(name = "id_alimento"),
+        inverseJoinColumns = @JoinColumn(name = "id_nutriente"))
+    private Set<Nutriente> nutrientes = new HashSet<>();
 }

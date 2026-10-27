@@ -25,4 +25,9 @@ public class Animal {
     @Positive(message = "El peso debe ser mayor a 0")
     @Column(nullable = false, precision = 8, scale = 3)
     private BigDecimal peso;
+
+    @NotNull(message = "La especie es obligatoria")
+    @ManyToOne
+    @JoinColumn(name = "id_especie")
+    private Especie especie;
 }
