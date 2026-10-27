@@ -8,13 +8,9 @@ Proyecto de Implementación de Sistemas, integrado con el modelo de base de dato
 
 ## 2. Integrantes
 
-- Bobadilla Gómez Miguel Ángel
-- Castellanos Marín Noemí
-- Castro Villalpando José Emmanuel
-- Galicia Romahn Santiago
-- Lechuga Arellano Leonardo Gael
-- Pacheco Gálvez Gabriela
-- Salas Loaeza Itzel Guadalupe
+- Moni
+- Brandon
+- Viani
 
 ## 3. Tabla de requerimientos (primeros 5 requerimientos a cubrir)
 
