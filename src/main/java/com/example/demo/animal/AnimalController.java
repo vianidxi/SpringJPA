@@ -1,6 +1,7 @@
 package com.example.demo.animal;
 
 import java.util.List;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.model.Animal;
 import com.example.demo.repo.AnimalRepository;
@@ -19,12 +20,12 @@ public class AnimalController {
     }
 
     @PostMapping("/animales")
-    public Animal add(@RequestBody Animal animal) {
+    public Animal add(@Valid @RequestBody Animal animal) {
         return repo.save(animal);
     }
 
     @PutMapping("/animales/{id}")
-    public Animal update(@PathVariable Long id, @RequestBody Animal a) {
+    public Animal update(@PathVariable Long id, @Valid @RequestBody Animal a) {
         a.setCodigoAsociado(id);
         return repo.save(a);
     }

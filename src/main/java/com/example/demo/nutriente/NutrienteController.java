@@ -1,6 +1,7 @@
 package com.example.demo.nutriente;
 
 import java.util.List;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.model.Nutriente;
 import com.example.demo.repo.NutrienteRepository;
@@ -19,12 +20,12 @@ public class NutrienteController {
     }
 
     @PostMapping("/nutrientes")
-    public Nutriente add(@RequestBody Nutriente nutriente) {
+    public Nutriente add(@Valid @RequestBody Nutriente nutriente) {
         return repo.save(nutriente);
     }
 
     @PutMapping("/nutrientes/{id}")
-    public Nutriente update(@PathVariable Long id, @RequestBody Nutriente n) {
+    public Nutriente update(@PathVariable Long id, @Valid @RequestBody Nutriente n) {
         n.setId(id);
         return repo.save(n);
     }
